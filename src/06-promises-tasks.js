@@ -96,10 +96,28 @@ function getFastestPromise(array) {
  *    });
  *
  */
+/* function chainPromises(array, action) {
+  const res = [];
+  return array.reduce((acc, prom) => acc
+    .then((value) => {
+      console.log(value);
+      if (value !== undefined) res.push(value);
+      return prom;
+    })
+    .catch(() => {}), Promise.resolve())
+    .then((value) => {
+      if (value !== undefined) res.push(value);
+      res.shift();
+      console.log(res);
+      const t = res.reduce(action, 0);
+      // console.log(t);
+      return t;
+    });
+}
+*/
 function chainPromises(/* array, action */) {
   throw new Error('Not implemented');
 }
-
 module.exports = {
   willYouMarryMe,
   processAllPromises,
